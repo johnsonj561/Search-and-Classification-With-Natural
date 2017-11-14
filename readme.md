@@ -17,7 +17,7 @@ Running JavaScript outside the browser with Node.js allows JavaScript to run on 
 
 [Install Node.js]
 
-After installing Node.js, confirm that installation was successful by opening the terminal checking the current version. New downloads will output version 8 or 9, depending on your install.
+After installing Node.js, confirm that installation was successful by opening the terminal checking the current version. Version 9 was just released in October.
 ```
 $ node -v
 v9.1.0  
@@ -39,7 +39,7 @@ $ npm -v
 
 ### Natural Package
 
-[Natural] is one of the more popular natural language libraries for Node.js.
+[Natural] is one of the more popular natural language libraries for Node.js. It's receiving approximately 50,000 downloads per week at the time of this documentation.
 
 Some utilities provided by Natural include:
 - tokenizing
@@ -53,6 +53,8 @@ Some utilities provided by Natural include:
 - n-grams
 
 Natural can be easily added to your project through use of NPM, as described in the next section.
+
+Natural strives to provide a one stop NLP resource, similar to NLTK for Python. They need contributors! If you are interested in NLP and JavaScript/Node.js, then this appears to be great opportunity to contribute to open source NLP.
 
 
 ### Starting a Project With Natural
@@ -116,5 +118,5 @@ Naive Bayes and SVM models were created and tested using 10 fold cross validatio
 [Natural]: https://www.npmjs.com/package/natural
 [More About Node.js]: https://nodejs.org/en/about/
 [Install Node.js]: https://nodejs.org/en/
-[About NPM]: https://www.npmjs.com/
+[More About NPM]: https://www.npmjs.com/
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
