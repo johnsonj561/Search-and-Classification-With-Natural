@@ -85,25 +85,16 @@ That's it! The Natural API is now available for use in your JavaScript project.
 
 -----
 
-### Coming Soon
+### More Coming Soon
 
-Performing text classification with NPM's [Natural] package.
+Tokenizing, stemming, stop words, tf-idf, cosine similarity
 
-Data set includes 24,783 twitter tweets that are classified as hate speech, offensive, or neither. [Additional Info About Data] 
-
-This project reduces the data set to two classes, offensive and non-offensive. If a raw data tweet is labelled as either hate speech or offensive speech, we label it as offensive. If raw data tweet is not labelled as hate speech of offensive speech, we label it as non-offensive. 
-
-[Data Transformation] is required to convert the raw data to a 2 class data set.
 
 -----
 
-### Coming Soon
+### More Coming Soon
 
-[Weka] was first used to prove offensive text classification concept, and to determine best pre-processing strategies.
-
-[Natural] was then used to construct a classification model that can be run on the server, to be queried by users.
-
-Naive Bayes and SVM models were created and tested using 10 fold cross validation. Cross validation results:
+Naive Bayes classification, comparison with Weka results
 
 | Tool        | Classifier    | Accuracy |
 | ----------- | ------------- |----------|
