@@ -61,17 +61,17 @@ Natural strives to provide a one stop NLP resource, similar to NLTK for Python. 
 
 1. Create a new directory for your project, then navigate to project directory.
 ```
-mkdir NaturalDemo
-cd NaturalDemo
+$ mkdir NaturalDemo
+$ cd NaturalDemo
 ```
 2. Create a package.json file. The package.json file is a config file to organize project dependencies.
 ```
-npm init
+$ npm init
 ```
 This command will prompt for several project attributes. Complete the prompts or press enter to use default/blank values.
 3. Install Natural and save it to the package.json file.
 ```
-npm install --save natural
+$ npm install --save natural
 ```
 4. Import the natural library to your code by including it at the top of your js file.
 ```javascript
