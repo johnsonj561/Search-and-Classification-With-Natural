@@ -1,0 +1,21 @@
+{
+  "name": "naturaldemo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "fetch": "^1.1.0",
+    "fs-extra": "^4.0.2",
+    "html2plaintext": "^1.1.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "natural": "^0.5.4",
+    "serve-favicon": "~2.4.2"
+  }
+}
