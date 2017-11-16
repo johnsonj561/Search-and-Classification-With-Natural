@@ -275,7 +275,7 @@ and: 0.777
 
 Document 2 has a higher tf-idf for term 'dog' because frequency of dog is higher than other terms.
 
-All documents have a low score for term 'and' because the document frequency is 4, this term is not rare, resulting in a small idf value.
+All documents have a low tf-idf score for term 'and' because the document frequency is 4, this term is not rare, resulting in a small idf value.
 
 
 -----
@@ -283,8 +283,25 @@ All documents have a low score for term 'and' because the document frequency is 
 
 ## Cosine Similarity
 
-This section covers the cosine similarity calculation.
+The Natural library does not provide a Cosine Similarity library.
 
+I've defined my own module for calculating Cosine Similarity. Find [cosine similarity source] code here
+
+#### Cosine Similarity Example
+
+This example calculates the cosine similarity for all document pairs and outputs as a matrix.
+
+[cosine-similarity.js]
+Output
+```
+$ node cosine-similarity.js
+	      Doc1	Doc2	Doc3	Doc4
+Doc 1:	1.00	0.15	0.22	0.04
+Doc 2:	0.15	1.00	0.19	0.03
+Doc 3:	0.22	0.19	1.00	0.03
+Doc 4:	0.04	0.03	0.03	1.00
+-----
+```
 
 -----
 
@@ -314,3 +331,5 @@ Naive Bayes classification, comparison with Weka results
 [tokenize.js]: readme-examples/tokenize.js
 [stemming.js]: readme-examples/stemming.js
 [tf-idf.js]: readme-examples/tf-idf.js
+[cosine similarity source]: cosine-similarity/main.js
+[cosine-similarty.js]: readme-examples/cosine-similarty.js
