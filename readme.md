@@ -102,7 +102,7 @@ That's it! The Natural API is now available for use in your JavaScript project.
 -----
 
 
-## TF-IDF
+## TF IDF
 
 This section walks through the construction of a word-doc tf-idf matrix given a collection of documents.
 
