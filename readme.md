@@ -187,13 +187,13 @@ $ node stemming.js
 Natural offers several options for computing tf-idf values for each document-term pair.
 
 1. Supply documents to TfIdf object as relative file path.
-2. Supply documents to TfIdf object as a un-tokenized string.
+2. Supply documents to TfIdf object as an un-tokenized string.
 3. Supply documents to TfIdf object as an array of tokens.
 
 Options 1 and 2 will use Natural's default tokenization techniques. In our example below, we will use option 3 so that we can apply stemming to our tokens.
 
 
-#### tf-idf Example
+#### TF-IDF Example
 
 [tf-idf.js]
 ```javascript
@@ -235,37 +235,48 @@ Output
 $ node tf-idf.js
 
 Document 0
-and: 1.693
+ar: 1.693
 popular: 1.693
 pet: 1.693
 cat: 1.288
 dog: 1.288
-ar: 1.288
+and: 0.777
 
 Document 1
 sleep: 1.693
+eat: 1.693
 a: 1.693
 lot: 1.693
 cat: 1.288
 like: 1.288
 to: 1.288
+and: 0.777
 
 Document 2
 dog: 2.575
 plai: 1.693
 outsid: 1.693
+be: 1.693
 with: 1.693
 other: 1.693
 like: 1.288
 to: 1.288
+and: 0.777
 
 Document 3
 fish: 1.693
-not: 1.693
-much: 1.693
-fun: 1.693
-ar: 1.288
+swim: 1.693
+in: 1.693
+circl: 1.693
+blow: 1.693
+bubbl: 1.693
+and: 0.777
 ```
+
+Document 2 has a higher tf-idf for term 'dog' because frequency of dog is higher than other terms.
+
+All documents have a low score for term 'and' because the document frequency is 4, this term is not rare, resulting in a small idf value.
+
 
 -----
 

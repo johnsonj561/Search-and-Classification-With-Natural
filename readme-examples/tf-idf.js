@@ -2,11 +2,10 @@ var natural = require('natural');
 const tokenizer = new natural.WordTokenizer();
 const tfidf = new natural.TfIdf();
 
-
 const document1 = "cats and dogs are popular pets";
-const document2 = "cats like to sleep a lot";
-const document3 = "dogs like to play outside with other dogs"
-const document4 = "fish are not much fun";
+const document2 = "cats like to sleep and eat a lot";
+const document3 = "dogs like to play outside and be with other dogs"
+const document4 = "fish swim in circles and blow bubbles";
 
 const collection = [document1, document2, document3, document4];
 
