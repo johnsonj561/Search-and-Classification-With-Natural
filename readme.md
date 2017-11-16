@@ -108,6 +108,39 @@ This section walks through the construction of a word-doc tf-idf matrix given a 
 
 ### Tokenizing
 
+Natural currently supports 4 tokenizers
+1. Word Tokenizer
+2. Treebank Tokenizer
+3. Word/Punctuation Tokenizer
+4. Regular Expresson Tokenizer
+
+[Tokenizer Example] 
+
+tokenize.js
+```javascript
+const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+
+const document = "This is an example document, let's see it tokenized";
+
+const tokenizedDocument = tokenizer.tokenize(document);
+```
+
+Output
+```
+$ node tokenize.js
+[ 'This',
+  'is',
+  'an',
+  'example',
+  'document',
+  'let',
+  's',
+  'see',
+  'it',
+  'tokenized' ]
+```
+
 ### Stop Words
 
 ### Stemming
@@ -147,3 +180,5 @@ Naive Bayes classification, comparison with Weka results
 [Install Node.js]: https://nodejs.org/en/
 [More About NPM]: https://www.npmjs.com/
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
+
+[Tokenizer Example]: readme-examples/tokenize.js
