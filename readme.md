@@ -184,6 +184,88 @@ $ node stemming.js
 
 ### TF-IDF Calculation
 
+Natural offers several options for computing tf-idf values for each document-term pair.
+
+1. Supply documents to TfIdf object as relative file path.
+2. Supply documents to TfIdf object as a un-tokenized string.
+3. Supply documents to TfIdf object as an array of tokens.
+
+Options 1 and 2 will use Natural's default tokenization techniques. In our example below, we will use option 3 so that we can apply stemming to our tokens.
+
+
+#### tf-idf Example
+
+[tf-idf.js]
+```javascript
+var natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+const tfidf = new natural.TfIdf();
+
+
+const document1 = "cats and dogs are popular pets";
+const document2 = "cats like to sleep a lot";
+const document3 = "dogs like to play outside with other dogs"
+const document4 = "fish are not much fun";
+
+const collection = [document1, document2, document3, document4];
+
+const tokenizedStemmedDocuments = [];
+
+// Push tokenized/stemmed docs onto new array
+collection.forEach(doc => {
+  tokenizedStemmedDocuments.push(
+    tokenizer.tokenize(doc)
+    .map(term => natural.PorterStemmer.stem(term)));
+});
+
+// Add each tokenized/stemmed doc to tfidf object
+tokenizedStemmedDocuments.forEach(doc => tfidf.addDocument(doc));
+
+// Output each documents tf-idf values
+collection.forEach((doc, idx) => {
+  console.log('\nDocument ' + idx);
+  tfidf.listTerms(idx).forEach(item => {
+    console.log(item.term + ': ' + item.tfidf.toFixed(3));
+  });
+})
+```
+
+Output
+```
+$ node tf-idf.js
+
+Document 0
+and: 1.693
+popular: 1.693
+pet: 1.693
+cat: 1.288
+dog: 1.288
+ar: 1.288
+
+Document 1
+sleep: 1.693
+a: 1.693
+lot: 1.693
+cat: 1.288
+like: 1.288
+to: 1.288
+
+Document 2
+dog: 2.575
+plai: 1.693
+outsid: 1.693
+with: 1.693
+other: 1.693
+like: 1.288
+to: 1.288
+
+Document 3
+fish: 1.693
+not: 1.693
+much: 1.693
+fun: 1.693
+ar: 1.288
+```
 
 -----
 
@@ -220,3 +302,4 @@ Naive Bayes classification, comparison with Weka results
 
 [tokenize.js]: readme-examples/tokenize.js
 [stemming.js]: readme-examples/stemming.js
+[tf-idf.js]: readme-examples/tf-idf.js
