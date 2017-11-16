@@ -114,9 +114,9 @@ Natural currently supports 4 tokenizers
 3. Word/Punctuation Tokenizer
 4. Regular Expresson Tokenizer
 
-[Tokenizer Example] 
+#### Tokenize Example
 
-tokenize.js
+[tokenize.js]
 ```javascript
 const natural = require('natural');
 const tokenizer = new natural.WordTokenizer();
@@ -124,6 +124,8 @@ const tokenizer = new natural.WordTokenizer();
 const document = "This is an example document, let's see it tokenized";
 
 const tokenizedDocument = tokenizer.tokenize(document);
+
+console.log(tokenizedDocument);
 ```
 
 Output
@@ -181,4 +183,4 @@ Naive Bayes classification, comparison with Weka results
 [More About NPM]: https://www.npmjs.com/
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
 
-[Tokenizer Example]: readme-examples/tokenize.js
+[tokenize.js]: readme-examples/tokenize.js
