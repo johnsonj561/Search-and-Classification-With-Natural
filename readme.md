@@ -108,6 +108,8 @@ This section walks through the construction of a word-doc tf-idf matrix given a 
 
 ### Tokenizing
 
+The first step in calculating tf-idf values is the tokenization of documents.
+
 Natural currently supports 4 tokenizers
 1. Word Tokenizer
 2. Treebank Tokenizer
@@ -143,9 +145,42 @@ $ node tokenize.js
   'tokenized' ]
 ```
 
-### Stop Words
-
 ### Stemming
+
+Next we apply stemming to all of the document terms.
+
+Natural provides Porter and Lancaster Stemming algorithms.
+
+#### Stemming Example
+
+[stemming.js]
+```javascript
+const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+
+const document = "This is an example document, let's see it tokenized";
+
+const tokenizedStemmedDocument = tokenizer
+  .tokenize(document)
+  .map(term => natural.PorterStemmer.stem(term));
+
+console.log(tokenizedStemmedDocument);
+```
+
+Output
+```
+$ node stemming.js
+[ 'thi',
+  'is',
+  'an',
+  'exampl',
+  'document',
+  'let',
+  's',
+  'see',
+  'it',
+  'token' ]
+```
 
 ### TF-IDF Calculation
 
@@ -184,3 +219,4 @@ Naive Bayes classification, comparison with Weka results
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
 
 [tokenize.js]: readme-examples/tokenize.js
+[stemming.js]: readme-examples/stemming.js
