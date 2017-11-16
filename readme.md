@@ -285,17 +285,55 @@ All documents have a low tf-idf score for term 'and' because the document freque
 
 The Natural library does not provide cosine similarity functionality.
 
-I've defined my own module for calculating Cosine Similarity. Find [cosine similarity source] code here.
+I've defined my own module for calculating Cosine Similarity. Find [cosine similarity source] code here
 
 #### Cosine Similarity Example
 
 This example calculates the cosine similarity for all document pairs and outputs as a matrix.
 
 [cosine-similarity.js]
+```javascript
+const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+const tfidf = new natural.TfIdf();
+const CosineSimilarity = require('../cosine-similarity/main');
+
+const document1 = "cats and dogs are popular pets";
+const document2 = "cats like to sleep and eat a lot";
+const document3 = "dogs like to play outside and be with other dogs"
+const document4 = "fish swim in circles and blow bubbles";
+
+const collection = [document1, document2, document3, document4];
+
+const tokenizedStemmedDocuments = [];
+
+// Push tokenized/stemmed docs onto new array
+collection.forEach(doc => {
+  tokenizedStemmedDocuments.push(
+    tokenizer.tokenize(doc)
+    .map(term => natural.PorterStemmer.stem(term)));
+});
+
+// Add each tokenized/stemmed doc to tfidf object
+tokenizedStemmedDocuments.forEach(doc => tfidf.addDocument(doc));
+
+// Compute cosine similarity for all document pairs
+// Output cosine similarity matrix
+console.log('\tDoc1\tDoc2\tDoc3\tDoc4');
+collection.forEach((docRow, row) => {
+  let s = '\Doc ' + (row + 1) + ':';
+  collection.forEach((docCol, col) => {
+    s += '\t' + CosineSimilarity(tfidf.listTerms(row), tfidf.listTerms(col)).toFixed(2);
+  });
+  console.log(s)
+});
+
+```
+
 Output
 ```
 $ node cosine-similarity.js
-	      Doc1	Doc2	Doc3	Doc4
+	Doc1	Doc2	Doc3	Doc4
 Doc 1:	1.00	0.15	0.22	0.04
 Doc 2:	0.15	1.00	0.19	0.03
 Doc 3:	0.22	0.19	1.00	0.03
@@ -332,4 +370,4 @@ Naive Bayes classification, comparison with Weka results
 [stemming.js]: readme-examples/stemming.js
 [tf-idf.js]: readme-examples/tf-idf.js
 [cosine similarity source]: cosine-similarity/main.js
-[cosine-similarty.js]: readme-examples/cosine-similarty.js
+[cosine-similarity.js]: readme-examples/cosine-similarty.js
