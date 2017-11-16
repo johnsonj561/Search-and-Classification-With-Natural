@@ -341,6 +341,13 @@ Doc 4:	0.04	0.03	0.03	1.00
 -----
 ```
 
+Document 4 has the lowest similarity to the other 3 documents, because it does not mention cats or dogs.
+
+Document 1 and Document 3 have the highest similarity due to multiple occurences of term 'Dog'.
+
+As expected, diagonal consists of all 1s as each document is identical to itself.
+
+
 -----
 
 
