@@ -6,9 +6,9 @@
 
 ## Overview
 
-#### [Installation](#instlling-node.js-and-natural)
+#### [Installation](#installing-node.js-and-natural)
 
-#### Cosine Similarity
+#### [Cosine Similarity](#cosine-similarity)
 
 #### Naive Bayes Classification
 
