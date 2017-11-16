@@ -6,7 +6,7 @@
 
 ## Overview
 
-#### [Installing](#instlling node.js and natural)
+#### [Installation](#instlling-node.js-and-natural)
 
 #### Cosine Similarity
 
