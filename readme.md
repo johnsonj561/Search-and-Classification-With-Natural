@@ -1,10 +1,24 @@
 # Cosine Similarity & Classification with Natural
 
+
 -----
+
+
+## Overview
+
+#### [Installing](#instlling node.js and natural)
+
+#### Cosine Similarity
+
+#### Naive Bayes Classification
+
+
+-----
+
 
 ## Installing Node.js and Natural
 
-This section contains a quick overview and installation instructions to get up and running with Node.js and it's Natural NLP package.
+This section contains a quick overview and installation instructions to get up and running with Node.js and NLP package Natural.
 
 
 ### Node.js
@@ -85,14 +99,33 @@ That's it! The Natural API is now available for use in your JavaScript project.
 
 -----
 
-### More Coming Soon
 
-Tokenizing, stemming, stop words, tf-idf, cosine similarity
+## TF-IDF
+
+This section walks through the construction of a word-doc tf-idf matrix given a collection of documents.
+
+### Tokenizing
+
+### Stop Words
+
+### Stemming
+
+### TF-IDF Calculation
 
 
 -----
 
-### More Coming Soon
+
+## Cosine Similarity
+
+This section covers the cosine similarity calculation.
+
+
+-----
+
+
+## Naive Bayes Classification
+
 
 Naive Bayes classification, comparison with Weka results
 
@@ -104,6 +137,7 @@ Naive Bayes classification, comparison with Weka results
 | NPM Natural | SVM           | TBD      |
 
 
+-----
 
 
 [Natural]: https://www.npmjs.com/package/natural
