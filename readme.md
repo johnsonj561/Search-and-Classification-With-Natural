@@ -6,17 +6,19 @@
 
 ## Overview
 
-#### [Installation](#installing-node.js-and-natural)
+#### [Installation](#installing-node-and-natural)
 
-#### [Cosine Similarity](#cosine-similarity)
+#### [TF-IDF Calculation](#tf-idf-calculation)
 
-#### Naive Bayes Classification
+#### [Cosine Similarity Calculation](#cosine-similarity)
+
+#### [Text Classification](#naive-bayes-classification)
 
 
 -----
 
 
-## Installing Node.js and Natural
+## Installing Node and Natural
 
 This section contains a quick overview and installation instructions to get up and running with Node.js and NLP package Natural.
 
