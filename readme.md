@@ -283,9 +283,9 @@ All documents have a low tf-idf score for term 'and' because the document freque
 
 ## Cosine Similarity
 
-The Natural library does not provide a Cosine Similarity library.
+The Natural library does not provide cosine similarity functionality.
 
-I've defined my own module for calculating Cosine Similarity. Find [cosine similarity source] code here
+I've defined my own module for calculating Cosine Similarity. Find [cosine similarity source] code here.
 
 #### Cosine Similarity Example
 
