@@ -8,7 +8,7 @@
 
 #### [Installation](#installing-node-and-natural)
 
-#### [TF-IDF Calculation](#tf-idf-calculation)
+#### [TF-IDF Calculation](#tf-idf)
 
 #### [Cosine Similarity Calculation](#cosine-similarity)
 
