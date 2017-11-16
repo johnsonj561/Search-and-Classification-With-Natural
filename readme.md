@@ -351,7 +351,7 @@ As expected, diagonal consists of all 1s as each document is identical to itself
 -----
 
 
-## Naive Bayes Classification
+## Naive Bayes Classification (TO BE COMPLETED)
 
 
 Naive Bayes classification, comparison with Weka results
@@ -363,6 +363,8 @@ Naive Bayes classification, comparison with Weka results
 | NPM Natural | Naive Bayes   | TBD      |
 | NPM Natural | SVM           | TBD      |
 
+
+NOT DONE
 
 -----
 
