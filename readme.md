@@ -424,18 +424,28 @@ natural.BayesClassifier.load('classifier.json', null, function(err, nbClassifier
 });
 ```
 
+### Natural's Classification Accuracy
 
-Naive Bayes classification, comparison with Weka results
+To assess the performance of Natural's classifier, the [4 Universities Data Set] was used to train/test Naive Bayes classifier. The resulting test set accuracy was then compared to the test set accuracy achieved using [Weka]. Weka is a popular machine learning tool written in Java.
+
+Note - Natural does not offer a solution for calculating test set accuracy as Weka does. For Natural, the test set was classified and accuracy was calculated manually by tallying correct/incorrect classifications.
+
+The training/testing JavaScript code can be found here:
+- [train-naive-bayes.js]
+- [test-naive-bayes.js]
+
+Classifier Testing Output:
+![alt text](classification/data_processing/screenshots/naive-bayes-test-results.png)
+
+Natural vs Weka Classificaton Accuracy
 
 | Tool        | Classifier    | Accuracy |
 | ----------- | ------------- |----------|
 | Weka        | Naive Bayes   | 87.32 %  |
-| Weka        | SVM           | 92.73 %  |
-| NPM Natural | Naive Bayes   | TBD      |
-| NPM Natural | SVM           | TBD      |
+| NPM Natural | Naive Bayes   | 73.38 %  |     |
 
+Weka performed significantly better than Natural in this test case. There are many factors that could contribute to this difference, and it is possible that better results can be achieved by tuning classifier parameters.
 
-NOT DONE
 
 -----
 
@@ -445,6 +455,7 @@ NOT DONE
 [Install Node.js]: https://nodejs.org/en/
 [More About NPM]: https://www.npmjs.com/
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
+[Weka]: https://www.cs.waikato.ac.nz/ml/weka/
 
 [tokenize.js]: readme-examples/tokenize.js
 [stemming.js]: readme-examples/stemming.js
@@ -452,4 +463,6 @@ NOT DONE
 [cosine similarity source]: cosine-similarity/main.js
 [cosine-similarity.js]: readme-examples/cosine-similarty.js
 [4 Universities Data Set]: classification/data/readme.md
-[train-classifier.js]: readme-examples/classify-text.js
+[classify-text.js]: readme-examples/classify-text.js
+[train-naive-bayes.js]: classification/data-processing/train-naive-bayes.js
+[test-naive-bayes.js]: classification/data-processing/test-naive-bayes.js

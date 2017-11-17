@@ -11,8 +11,6 @@ const testData = '../data/webkb-test-stemmed.txt';
 const trainedClassifierPath = '../classifiers/naiveBayesClassifier.json';
 
 
-
-
 /**
  * Load Naive Bayes Classifier from JSON file
  */
