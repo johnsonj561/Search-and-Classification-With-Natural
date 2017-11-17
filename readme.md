@@ -435,6 +435,7 @@ The training/testing JavaScript code can be found here:
 - [test-naive-bayes.js]
 
 Classifier Testing Output:
+
 ![alt text](classification/data_processing/screenshots/naive-bayes-test-results.png)
 
 Natural vs Weka Classificaton Accuracy
