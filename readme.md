@@ -409,6 +409,8 @@ The Natural classification interface provides 2 methods of persistence:
 
 #### Saving & Loading Classifier Example
 
+Given a classifier that has already been trained, we can save/load as follows:
+
 ```javascript
 
 // save classifier to local json file
