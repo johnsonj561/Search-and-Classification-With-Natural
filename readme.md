@@ -358,9 +358,14 @@ In this section we will walk through a short example that covers basics of train
 
 ### Training Naive Bayes Model
 
-Training a model with Natural is as simple as adding documents to classifier and calling the classifier's train method.
+Training a model with Natural is as simple as:
+1. add documents to classifier
+2. call classifier's train method
+3. classify new un-labelled data
 
 #### Training and Classfying Examaple
+
+Documents can be added to the classifier as a string or as an array of tokens. Documents are added as (doc, label) pairs.
 
 [classify-text.js]
 ```javascript
@@ -395,6 +400,28 @@ Result: positive
 Test 2: I am disatisfied with purchase
 Result: negative
 ```
+
+### Classifier Persistence
+
+The Natural classification interface provides 2 methods of persistence:
+1. Write to local file as JSON
+2. Serialize as string for storage 
+
+#### Saving & Loading Classifier Example
+
+```javascript
+
+// save classifier to local json file
+nbClassifier.save('classifier.json', function(err, classifier) {
+   // handle callback
+});
+
+// load classifier and classify a string
+natural.BayesClassifier.load('classifier.json', null, function(err, nbClassifier) {
+  const classification = nbClassifier.classfy('Some new document to classify');
+});
+```
+
 
 Naive Bayes classification, comparison with Weka results
 
