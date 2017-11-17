@@ -465,5 +465,5 @@ Weka performed significantly better than Natural in this test case. There are ma
 [cosine-similarity.js]: readme-examples/cosine-similarty.js
 [4 Universities Data Set]: classification/data/readme.md
 [classify-text.js]: readme-examples/classify-text.js
-[train-naive-bayes.js]: classification/data-processing/train-naive-bayes.js
-[test-naive-bayes.js]: classification/data-processing/test-naive-bayes.js
+[train-naive-bayes.js]: classification/data_processing/train-naive-bayes.js
+[test-naive-bayes.js]: classification/data_processing/test-naive-bayes.js
