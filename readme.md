@@ -327,7 +327,6 @@ collection.forEach((docRow, row) => {
   });
   console.log(s)
 });
-
 ```
 
 Output
@@ -351,8 +350,51 @@ As expected, diagonal consists of all 1s as each document is identical to itself
 -----
 
 
-## Naive Bayes Classification (TO BE COMPLETED)
+## Text Classification 
 
+The Natural library currently only supports Naive Bayes and Logistic Regression classification algorithms.
+
+In this section we will walk through a short example that covers basics of training/testing a Naive Bayes classifier. We will close this section by comparing Weka and Natural classificaton accuracy on the [4 Universities Data Set].
+
+### Training Naive Bayes Model
+
+Training a model with Natural is as simple as adding documents to classifier and calling the classifier's train method.
+
+#### Training and Classfying Examaple
+
+[classify-text.js]
+```javascript
+const natural = require('natural');
+const nbClassifier = new natural.BayesClassifier();
+
+nbClassifier.addDocument('this product was great, I\'m so happy', 'positive');
+nbClassifier.addDocument('I was dissapointed with this poor product', 'negative');
+nbClassifier.addDocument('This was bad purchase, poor customer service and overall disatisfied', 'negative');
+nbClassifier.addDocument('Excellent service, very satisified with good quality', 'positive');
+
+nbClassifier.train();
+
+let test1 = 'I am happy with this product';
+let classification1 = nbClassifier.classify(test1);
+console.log('\nTest 1: ' + test1);
+console.log('Result: ' + classification1);
+
+let test2 = 'I am disatisfied with purchase';
+let classification2 = nbClassifier.classify(test2);
+console.log('\nTest 2: ' + test2);
+console.log('Result: ' + classification2);
+```
+
+Output
+```
+$ node classify-text.js
+
+Test 1: I am happy with this product
+Result: positive
+
+Test 2: I am disatisfied with purchase
+Result: negative
+```
 
 Naive Bayes classification, comparison with Weka results
 
@@ -380,3 +422,5 @@ NOT DONE
 [tf-idf.js]: readme-examples/tf-idf.js
 [cosine similarity source]: cosine-similarity/main.js
 [cosine-similarity.js]: readme-examples/cosine-similarty.js
+[4 Universities Data Set]: classification/data/readme.md
+[train-classifier.js]: readme-examples/classify-text.js
