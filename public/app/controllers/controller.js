@@ -9,7 +9,8 @@ angular.module('app.controller', ['app.service'])
     MyService.callAPI().then(resp => console.log(resp));
 
     $scope.classifyText = function (text) {
-      $scope.classificatonResult = '';
+      $scope.classificationResult = false;
+      $scope.loading = true;
       MyService.classifyText(text)
         .then(resp => {
           if (resp.data.success) {
@@ -17,6 +18,11 @@ angular.module('app.controller', ['app.service'])
             $scope.classificationResult = resp.data.result;
           } else $scope.classificationResult = 'Resule Unavailable';
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .finally(() => $scope.loading = false);
+    }
+
+    $scope.closeResult = function () {
+      $scope.classificationResult = false;
     }
 }]);

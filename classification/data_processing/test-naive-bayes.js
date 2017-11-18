@@ -3,6 +3,8 @@
  */
 const fse = require('fs-extra');
 const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
+
 
 /*
  * Define test data and file to write classification model to

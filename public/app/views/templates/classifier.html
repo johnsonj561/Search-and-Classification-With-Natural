@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <div class="col-md-6">
+    <div class="form-group classifier-form">
+      <label>Enter a Computer Science Web Page URL</label>
+      <input type="text" class="form-control" ng-model="url">
+      <button class="btn btn-sm green-background" ng-click="classifyText(url)">Run Classifier</button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div ng-if="loading" class="loading-santa">
+      <a href="https://www.fg-a.com" target="_blank"><img class="embeddedObject" src="https://content.screencast.com/users/fg-a/folders/christmas/media/f97cafa9-da31-46ce-9a3a-2cbddc22cb45/SANTASEE022Ea12a.gif" width="220" height="146" border="0" alt="Clipart" /></a>
+    </div>
+    <div ng-if="classificationResult" class="classification-result">
+      <div class="classification-img-container">
+        <img src="media/xmas-box.png" />
+        <span ng-bind="classificationResult"></span>
+        <i ng-click="closeResult()" class="fa fa-times"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="animation text-center">
+  <a href="https://www.fg-a.com" target="_blank"><img class="embeddedObject" src="https://content.screencast.com/users/fg-a/folders/christmas/media/bcaa4ce3-5de3-4348-9c91-d56f271aa4dd/christmas-horizontal-line-1.gif" width="456" height="66" border="0" alt="Clipart" /></a>
+</div>
+
+<div class="row">
+  <h1 class="green-text">Text Classification with Naive Bayes</h1>
+  <p>The above interface uses a JavaScript natural language processing library, 'Natural', to perform text classification. A Naive Bayes classifier was trained against <a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/" target="_blank">The 4 Universities Data Set.</a> The original data set contains web pages from computer science departments in 1997. The pages were labelled into 7 categories:
+  </p>
+  <ul class="list-inline">
+    <li>student</li>
+    <li>faculty</li>
+    <li>staff</li>
+    <li>department</li>
+    <li>course</li>
+    <li>project</li>
+    <li>other</li>
+  </ul>
+  <p>For this project, a <a href="http://csmining.org/index.php/webkb.html" target="_blank">simplified data set</a> which has been stemmed and split into training (2803 docs) and test (1396 docs) sets is used for the training of the classification model. Thesimplified data set includes 4 categories:
+  </p>
+  <ul class="list-inline">
+    <li>student</li>
+    <li>faculty</li>
+    <li>course</li>
+    <li>project</li>
+  </ul>
+</div>

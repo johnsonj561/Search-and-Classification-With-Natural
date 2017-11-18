@@ -7,7 +7,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
     // Home Route    
     .when('/', {
-      templateUrl: 'app/views/templates/home.html',
+      templateUrl: 'app/views/templates/classifier.html',
       controller: 'MyController',
       controllerAs: 'myCtrl',
     })

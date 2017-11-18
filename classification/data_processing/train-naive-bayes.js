@@ -3,8 +3,8 @@
  */
 const fse = require('fs-extra');
 const natural = require('natural');
-const bayesClassifier = new natural.BayesClassifier();
-
+const bayesClassifier = new natural.BayesClassifier(natural.PorterStemmer, true);
+const tokenizer = new natural.WordTokenizer();
 
 // Note - Naive Bayes Classifier uses Porter Stemmer by default.
 // Raw data is already stemmed, consider using unstemmed raw data.
@@ -54,7 +54,7 @@ readStream.on('data', data => {
     const text = doc[1];
     // confirm that we have a valid pair, then add to classifier
     if (text && label) {
-      bayesClassifier.addDocument(text.trim(), label.trim());
+      bayesClassifier.addDocument(text, label.trim());
       trainedDocs++;
       classFrequency[label.trim()]++;
     }

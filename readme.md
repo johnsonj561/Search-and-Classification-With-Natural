@@ -445,8 +445,7 @@ Natural vs Weka Classificaton Accuracy
 | Weka        | Naive Bayes   | 87.32 %  |
 | NPM Natural | Naive Bayes   | 73.38 %  |     |
 
-Weka performed significantly better than Natural in this test case. There are many factors that could contribute to this difference, and it is possible that better results can be achieved by tuning classifier parameters.
-
+Weka performed significantly better than Natural in this test case. There are several factors that could contribute to this difference, and it is possible that better results can be achieved by tuning classifier parameters.
 
 -----
 
