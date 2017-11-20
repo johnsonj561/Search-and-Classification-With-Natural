@@ -16,13 +16,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*
-* Must access routes after they've been parsed
-* Order of middleware is important
-*/
+ * Must access routes after they've been parsed
+ * Order of middleware is important
+ */
 app.use('/api', api);
 
 // Single Page Application
-app.get('/', function (req, res, next) {
+app.get('*', function (req, res, next) {
   res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 

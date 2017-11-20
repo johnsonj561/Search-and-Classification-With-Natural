@@ -14,12 +14,14 @@
   <link href="styles/style.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--  Google Christmas Font-->
+  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700" rel="stylesheet">
 </head>
 
 <body ng-app="nlApp">
 
   <!-- Static navbar -->
-  <nav class="navbar navbar-default navbar-static-top red-background">
+  <nav class="navbar navbar-default navbar-static-top red-background xmas-font">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,12 +30,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand white-text">NLP With NPM's Natural</a>
+        <a class="navbar-brand white-text">Search & Classification With NPM's Natural</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav pull-right">
-          <li class="active"><a href="#">Classifier</a></li>
-          <li><a href="#">Search</a></li>
+          <li id="nav-classifier"><a href="/">Classifier</a></li>
+          <li id="nav-search"><a href="/search">Search</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -42,7 +44,7 @@
 
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container silver-border-top" id="snow">
 
     <!-- angular view -->
     <div ng-view></div>

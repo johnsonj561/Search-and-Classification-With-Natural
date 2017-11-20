@@ -2,21 +2,32 @@ angular.module('app.service', [])
 
   .service('MyService', ['$http', function ($http) {
 
-
-    function callAPI() {
-      return $http.get('/api/');
-    };
-
     function classifyText(url) {
       console.log('\ncalling $http');
       return $http.post('/api/classify', {
         url: url
       });
-    };
+    }
+
+
+    function addDocument(url) {
+      return $http.post('/api/document', {
+        url: url
+      });
+    }
+
+
+    function queryCollection(query) {
+      return $http.post('/api/search', {
+        query: query
+      });
+    }
+
 
     return {
-      callAPI,
-      classifyText
+      classifyText,
+      addDocument,
+      queryCollection
     }
 
 }]);

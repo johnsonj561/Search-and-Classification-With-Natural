@@ -5,17 +5,21 @@ app.config(function ($routeProvider, $locationProvider) {
 
   $routeProvider
 
-    // Home Route    
-    .when('/', {
-      templateUrl: 'app/views/templates/classifier.html',
-      controller: 'MyController',
-      controllerAs: 'myCtrl',
+    .when('/search', {
+      templateUrl: 'app/views/templates/search.html',
+      controller: 'SearchController',
+      controllerAs: 'searchCtrl'
     })
 
+    .when('/classify', {
+      templateUrl: 'app/views/templates/classifier.html',
+      controller: 'ClassifyController',
+      controllerAs: 'classifyCtrl'
+    })
 
     // catch all to redirect to home page            
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/classify'
     });
 
   // Required for no base (remove '#' from address bar)
