@@ -469,6 +469,7 @@ Weka performed significantly better than Natural in this test case. There are se
 To demo the Natural library, I created a REST API that performs various natural language processing tasks.
 
 Client - AngularJS Single Page Application
+
 Server - Node.js Express Application
 
 Demo At http://localhost.com
@@ -492,7 +493,7 @@ Demo At http://localhost.com
 5. Server responds to the client with the 5 highest Cosine Similarity scores.
 
 
-There is much room for improvement. Calculating Cosine Similarity of every query-document pair is time consuming and several techniques can be used to avoid this. Additionally, providing the client with a document summary is critical.
+There is much room for improvement. Calculating Cosine Similarity of every query-document pair is time consuming and several techniques can be used to avoid this. Additionally, providing the client with a document summary is a must.
 
 Visit http://localhost.com/search to see this in action.
 
