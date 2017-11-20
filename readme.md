@@ -484,6 +484,28 @@ Demo At http://localhost.com
 4. Server serializes the the collection for future use.
 5. Server responds to client with success/error accordingly.
 
+```javascript
+router.post('/document', function (req, res, next) {
+  const url = req.body.url;
+  PlainText.getHTMLPlainText(url)
+    .then(resp => collection.addDocument(url, resp))
+    .then(() => collection.saveToFile())
+    .then(() => {
+      res.json({
+        success: true,
+        message: 'New document added to index',
+        url: url
+      });
+    }).catch(err => {
+      res.json({
+        success: false,
+        message: 'Unable to add document to index',
+        error: err
+      });
+    });
+});
+```
+
 #### Querying The Collection
 
 1. Client sends GET request to server's Document resource. URL must contain user's Query Phrase.
@@ -507,6 +529,26 @@ There is much room for improvement. Calculating Cosine Similarity of every query
 3. Server classifies the plain text using the previously trained Naive Bayes classifier.
 4. Server responds to client with the classification result.
 
+```javascript
+router.post('/classify', function (req, res, next) {
+  const url = req.body.url;
+  if (nbClassifier) {
+    htmlPlainText = PlainText.getHTMLPlainText(url)
+      .then(plainText => {
+        const result = nbClassifier.classify(plainText);
+        res.json({
+          success: true,
+          message: 'Classification Complete',
+          result: result
+        });
+      });
+  } else {
+    res.json({
+      message: 'Classifier Unavailable'
+    });
+  }
+});
+```
 
 -----
 

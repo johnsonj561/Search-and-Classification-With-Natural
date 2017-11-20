@@ -42,12 +42,9 @@ collection.loadFromFile()
  */
 router.post('/classify', function (req, res, next) {
   const url = req.body.url;
-  console.log('\n/classify hit');
-  // if our classifier is available
   if (nbClassifier) {
     htmlPlainText = PlainText.getHTMLPlainText(url)
       .then(plainText => {
-        console.log(plainText);
         const result = nbClassifier.classify(plainText);
         res.json({
           success: true,
@@ -68,14 +65,10 @@ router.post('/classify', function (req, res, next) {
  * Document is plain text found at url
  */
 router.post('/document', function (req, res, next) {
-  console.log('\n/document hit');
   const url = req.body.url;
-  console.log('\nindex: url = ' + url);
   PlainText.getHTMLPlainText(url)
     .then(resp => collection.addDocument(url, resp))
-    .then(() => console.log('Document added to index'))
     .then(() => collection.saveToFile())
-    .then(() => console.log('Collection written to file ' + collection.path))
     .then(() => {
       res.json({
         success: true,
