@@ -495,22 +495,17 @@ Demo At http://localhost.com
 
 There is much room for improvement. Calculating Cosine Similarity of every query-document pair is time consuming and several techniques can be used to avoid this. Additionally, providing the client with a document summary is a must.
 
-Visit http://localhost.com/search to see this in action.
-
-
 ### Part II) Text classification
 
 #### Training classifier
-1.
-2.
-3.
-4.
+1. Natural was used to train a Naive Bayes classifier and write the classifier to disk.
+2. When server starts up, the classifier is loaded into memory for use.
 
 #### Classifying New Data
-1.
-2.
-3.
-4.
+1. Client sends GET request to server's Classify resource. URL to be classified is included in request.
+2. Server retrieves plain text found at URL web page.
+3. Server classifies the plain text using the previously trained Naive Bayes classifier.
+4. Server responds to client with the classification result.
 
 
 -----
