@@ -1,7 +1,8 @@
 const natural = require('natural');
 const tokenizer = new natural.WordTokenizer();
 const tfidf = new natural.TfIdf();
-const CosineSimilarity = require('../cosine-similarity/main');
+const CosineSimilarity = require('../modules/cosine-similarity/main');
+const calcCosineSimilarity = CosineSimilarity.cosineSimilarity;
 
 const document1 = "cats and dogs are popular pets";
 const document2 = "cats like to sleep and eat a lot";
@@ -28,7 +29,7 @@ console.log('\tDoc1\tDoc2\tDoc3\tDoc4');
 collection.forEach((docRow, row) => {
   let s = '\Doc ' + (row + 1) + ':';
   collection.forEach((docCol, col) => {
-    s += '\t' + CosineSimilarity(tfidf.listTerms(row), tfidf.listTerms(col)).toFixed(2);
+    s += '\t' + calcCosineSimilarity(tfidf.listTerms(row), tfidf.listTerms(col)).toFixed(2);
   });
   console.log(s)
 });
