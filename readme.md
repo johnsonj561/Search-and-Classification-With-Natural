@@ -16,6 +16,8 @@
 
 #### [Text Classification](#naive-bayes-classification)
 
+#### [Demo](#natural-demo)
+
 
 -----
 
@@ -457,6 +459,58 @@ Natural vs Weka Classificaton Accuracy
 | NPM Natural | Naive Bayes   | 73.38 %  |     |
 
 Weka performed significantly better than Natural in this test case. There are several factors that could contribute to this difference, and it is possible that better results can be achieved by tuning classifier parameters.
+
+
+-----
+
+
+## Natural Demo
+
+To demo the Natural library, I created a REST API that performs various natural language processing tasks.
+
+Client - AngularJS Single Page Application
+Server - Node.js Express Application
+
+Demo At http://localhost.com
+
+### Part I) Search with Cosine Similarity
+
+#### Adding Documents To Collection
+
+1. Clients sends POST request to server's Document resource. Payload must contain URL of new document.
+2. Server retrieves plain text found at URL web page.
+3. Server uses Natural to add this document to the collection and update the collection's TF-IDF values.
+4. Server serializes the the collection for future use.
+5. Server responds to client with success/error accordingly.
+
+#### Querying The Collection
+
+1. Client sends GET request to server's Document resource. URL must contain user's Query Phrase.
+2. Server uses Natural to calculate TF-IDF values for the query phrase.
+3. Server calculates the Cosine Similarity for every query-document pair and writes results to array.
+4. Server sorts Cosine Similarity scores.
+5. Server responds to the client with the 5 highest Cosine Similarity scores.
+
+
+There is much room for improvement. Calculating Cosine Similarity of every query-document pair is time consuming and several techniques can be used to avoid this. Additionally, providing the client with a document summary is critical.
+
+Visit http://localhost.com/search to see this in action.
+
+
+### Part II) Text classification
+
+#### Training classifier
+1.
+2.
+3.
+4.
+
+#### Classifying New Data
+1.
+2.
+3.
+4.
+
 
 -----
 
