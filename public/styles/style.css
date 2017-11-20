@@ -26,6 +26,10 @@ input {
   visibility: hidden;
 }
 
+label {
+  display: block;
+}
+
 span.note {
   font-size: 1.1em;
   margin-top: 15px;

@@ -6,6 +6,8 @@
 
 ## Overview
 
+#### [What is Natural](#natural-overview)
+
 #### [Installation](#installing-node-and-natural)
 
 #### [TF-IDF Calculation](#tf-idf)
@@ -16,6 +18,24 @@
 
 
 -----
+
+
+## Natural Overview
+
+[Natural] is one of the more popular natural language processing libraries for Node.js. It's receiving approximately 50,000 downloads per week at the time of this documentation.
+
+Some utilities provided by Natural include:
+- tokenizing
+- stemming
+- string distance
+- tf-idf
+- classification
+- WordNet integration
+- spell checking
+- inflectors
+- n-grams
+
+Natural strives to provide a one stop NLP resource for JavaScript, similar to NLTK for Python. They need contributors! If you are interested in NLP and JavaScript/Node.js, then this appears to be great opportunity to contribute to open source NLP.
 
 
 ## Installing Node and Natural
@@ -55,22 +75,12 @@ $ npm -v
 
 ### Natural Package
 
-[Natural] is one of the more popular natural language libraries for Node.js. It's receiving approximately 50,000 downloads per week at the time of this documentation.
+Natural is easily installed with NPM. From your project directory, simply execute:
+```
+npm install --save natural
+```
 
-Some utilities provided by Natural include:
-- tokenizing
-- stemming
-- string distance
-- tf-idf
-- classification
-- WordNet integration
-- spell checking
-- inflectors
-- n-grams
-
-Natural can be easily added to your project through use of NPM, as described in the next section.
-
-Natural strives to provide a one stop NLP resource, similar to NLTK for Python. They need contributors! If you are interested in NLP and JavaScript/Node.js, then this appears to be great opportunity to contribute to open source NLP.
+The next section will cover creating a project with Natural from scratch.
 
 
 ### Starting a Project With Natural
@@ -350,7 +360,7 @@ As expected, diagonal consists of all 1s as each document is identical to itself
 -----
 
 
-## Text Classification 
+## Text Classification
 
 The Natural library currently only supports Naive Bayes and Logistic Regression classification algorithms.
 
@@ -405,7 +415,7 @@ Result: negative
 
 The Natural classification interface provides 2 methods of persistence:
 1. Write to local file as JSON
-2. Serialize as string for storage 
+2. Serialize as string for storage
 
 #### Saving & Loading Classifier Example
 
