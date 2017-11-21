@@ -29,7 +29,6 @@ natural.BayesClassifier.load(nbClassifierPath, null, function (err, classifier) 
  * Load Searchable Collection
  */
 const collectionFile = './modules/collection/myCollection.json';
-console.log(fse.pathExistsSync(collectionFile));
 const collection = new Collection(collectionFile);
 collection.loadFromFile()
   .then(resp => console.log('Classifier loaded from ' + collectionFile))
@@ -40,7 +39,7 @@ collection.loadFromFile()
  * Classify the document found at url
  * Uses Naive Bayes classifier trained on 4 Universities Data Set
  */
-router.post('/classify', function (req, res, next) {
+router.post('/classification', function (req, res, next) {
   const url = req.body.url;
   if (nbClassifier) {
     htmlPlainText = PlainText.getHTMLPlainText(url)
@@ -85,12 +84,13 @@ router.post('/document', function (req, res, next) {
 });
 
 
+
 /**
  * Search collection for query phrase
  * Calculate tf-idf for all query-doc pairs and return top 5 results
  */
-router.post('/search', function (req, res, next) {
-  let query = req.body.query;
+router.get('/search/:query', function (req, res, next) {
+  let query = req.params.query;
   // if no collection loaded return error
   if (!collection) {
     res.json({

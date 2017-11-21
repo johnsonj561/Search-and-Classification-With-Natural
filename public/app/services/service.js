@@ -2,9 +2,9 @@ angular.module('app.service', [])
 
   .service('MyService', ['$http', function ($http) {
 
+
     function classifyText(url) {
-      console.log('\ncalling $http');
-      return $http.post('/api/classify', {
+      return $http.post('/api/classification', {
         url: url
       });
     }
@@ -18,9 +18,7 @@ angular.module('app.service', [])
 
 
     function queryCollection(query) {
-      return $http.post('/api/search', {
-        query: query
-      });
+      return $http.get('api/search/' + query);
     }
 
 
@@ -30,4 +28,4 @@ angular.module('app.service', [])
       queryCollection
     }
 
-}]);
+      }]);

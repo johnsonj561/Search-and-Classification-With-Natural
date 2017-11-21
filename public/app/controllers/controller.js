@@ -2,8 +2,6 @@ angular.module('app.controller', ['app.service'])
 
   .controller('ClassifyController', ['$scope', 'MyService', function ($scope, MyService) {
 
-    console.log('ClassifyController init');
-
     angular.element('#nav-search').removeClass('active');
     angular.element('#nav-classifier').addClass('active');
 
