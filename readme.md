@@ -1,4 +1,4 @@
-# Cosine Similarity & Classification with Natural
+# Text Search & Classification with Natural
 
 
 -----
