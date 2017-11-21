@@ -18,6 +18,8 @@
 
 #### [Demo](#natural-demo)
 
+#### [Running Demo Locally](#run-demo-locally)
+
 
 -----
 
@@ -474,11 +476,12 @@ Server - Node.js Express Application
 
 Demo At http://localhost.com
 
+
 ### Part I) Search with Cosine Similarity
 
 #### Adding Documents To Collection
 
-1. Clients sends POST request to server's Document resource. Payload must contain URL of new document.
+1. Client sends POST request to server's Document resource. Payload must contain URL of new document.
 2. Server retrieves plain text found at URL web page.
 3. Server uses Natural to add this document to the collection and update the collection's TF-IDF values.
 4. Server serializes the the collection for future use.
@@ -495,6 +498,7 @@ Demo At http://localhost.com
 
 There is much room for improvement. Calculating Cosine Similarity of every query-document pair is time consuming and several techniques can be used to avoid this. Additionally, providing the client with a document summary is a must.
 
+
 ### Part II) Text classification
 
 #### Training classifier
@@ -509,6 +513,18 @@ There is much room for improvement. Calculating Cosine Similarity of every query
 
 
 -----
+
+## Run Demo Locally
+
+From terminal:
+```
+$ git clone https://github.com/johnsonj561/Search-and-Classification-With-Natural.git
+$ cd Search-and-Classification-With-Natural
+$ npm install
+$ npm run start
+```
+
+Then point browser to http://localhost:3000
 
 
 [Natural]: https://www.npmjs.com/package/natural
