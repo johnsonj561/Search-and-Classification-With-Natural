@@ -55,7 +55,9 @@ Running JavaScript outside the browser with Node.js allows JavaScript to run on 
 
 [More About Node.js]
 
-[Install Node.js]
+[Install Node.js Locally]
+
+[Install Node.js on AWS Linux] 
 
 After installing Node.js, confirm that installation was successful by opening the terminal checking the current version. Version 9 was just released in October.
 ```
@@ -529,7 +531,8 @@ Then point browser to http://localhost:3000
 
 [Natural]: https://www.npmjs.com/package/natural
 [More About Node.js]: https://nodejs.org/en/about/
-[Install Node.js]: https://nodejs.org/en/
+[Install Node.js Locally]: https://nodejs.org/en/
+[Install Node.js on AWS Linux]: https://gist.github.com/nrollr/325e9bc4c35a0523d290b38cfa3c5142
 [More About NPM]: https://www.npmjs.com/
 [Check Out Natural Documentation]: https://github.com/NaturalNode/natural
 [Weka]: https://www.cs.waikato.ac.nz/ml/weka/
