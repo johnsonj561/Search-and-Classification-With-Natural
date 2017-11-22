@@ -474,7 +474,7 @@ Client - AngularJS Single Page Application
 
 Server - Node.js Express Application
 
-Demo At http://localhost.com
+Demo At 52.27.151.127:3000
 
 
 ### Part I) Search with Cosine Similarity
