@@ -1,4 +1,4 @@
-# Text Search & Classification with Natural
+# Information Retrieval with Node.js & Natural
 
 
 -----
